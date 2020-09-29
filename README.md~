@@ -1,5 +1,5 @@
-# myproject
-A sample application to explain forms.ModelForm and forms.Form 
+
+# A sample application to explain forms.ModelForm and forms.Form
 
 
 ## Running Locally
@@ -8,9 +8,7 @@ A sample application to explain forms.ModelForm and forms.Form
 git clone https://github.com/felix13/myproject.git
 ```
 
-```bash
-pip install -r requirements.txt
-```
+
 
 ```bash
 python manage.py migrate

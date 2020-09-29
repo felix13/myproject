@@ -1,5 +1,7 @@
-# myproject
-A sample application to explain forms.ModelForm and forms.Form 
+
+# A sample application to explain forms.ModelForm and forms.Form
+
+Example used in the blog post [Difference between Django forms.Form and forms.ModelForm](https://sayari3.com/articles/5-difference-between-django-formsform-and-formsmodelform/)
 
 
 ## Running Locally
