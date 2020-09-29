@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block head %}
+
+  <link href="{% static 'css/articles.css' %}" rel="stylesheet">
+  
+  <script src="{% static 'js/articles.js' %}"></script>
+  
+{% endblock head %}
+
+{% block main %}
+         
+	  <a href="{% url 'articles' %}">
+       Home 
+      </a>
+      
+	  <form action="{% url 'search' %}" method="post" >
+	    {% csrf_token %}
+	    
+	    {{form.as_p}}
+	  
+	    <input type="submit" value="Submit">
+	      
+	  </form>
+	  
+	  {% if search %}
+	  
+	    <ul>
+	    {% for article in articles %}
+	    
+         <li>
+          <a href="{% url 'article' article.id %}">{{ article.title }}</a>
+          <a href="{% url 'edit' article.id %}">edit</a>
+          <a href="{% url 'delete' article.id %}">delete</a>
+         </li> 
+         
+         {% empty %}
+         <p> Nothing found :( </p>
+         
+        {% endfor %}
+        </ul>
+        
+      {% endif %}
+
+	 
+{% endblock main %}

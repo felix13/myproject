@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+
+  <link href="{% static 'css/articles.css' %}" rel="stylesheet">  
+ 
+{% endblock head %}
+
+{% block main %}
+
+    <a href="{% url 'articles' %}">
+     Home
+    </a>
+
+    <a href="{% url 'write' %}">
+     Write Article 
+    </a>
+   
+    <a class="draft" href="{% url 'drafts' %}" > Draft (  {{  draft_count }}  ) </a>
+   
+    <a  href="{% url 'search' %}" > search </a>
+ 
+    <ul>
+   {% for article in articles %}
+       <li>
+        <a href="{% url 'article' article.id %}">{{ article.title }}</a>
+        <a href="{% url 'edit' article.id %}">edit</a>
+        <a href="{% url 'delete' article.id %}">delete</a>
+       </li> 
+   {% endfor %}
+   </ul>
+   
+{% endblock main %}

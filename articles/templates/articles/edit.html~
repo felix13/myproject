@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head %}
+
+  <link href="{% static 'css/articles.css' %}" rel="stylesheet">
+ 
+  <script src="{% static 'js/articles.js' %}"></script>
+  
+{% endblock head %}
+
+{% block main %}
+       
+	  <a href="{% url 'articles' %}">
+       Home 
+      </a>
+      
+	  <form action="{% url 'edit' form.instance.pk %}" method="post" >
+	    {% csrf_token %}
+	    
+	    {{form.as_p}}
+	 
+	  </form>
+
+	 
+{% endblock main %}
