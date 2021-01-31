@@ -3,7 +3,6 @@
 {% load static %}
 
 
-
 {% block head %}
 
   <link href="{% static 'css/articles.css' %}" rel="stylesheet">  
@@ -22,16 +21,14 @@
    
    <a class="draft" href="{% url 'drafts' %}" > Drafts </a>
  
-   {% for article in drafts %}
-  
    <ul>
-       <li>
-        {{article.title}} 
+   {% for article in drafts %}
+      <li>
+        <a href="{% url 'article' article.id %}">{{ article.title }}</a>
         <a href="{% url 'edit' article.id %}">edit</a>
         <a href="{% url 'delete' article.id %}">delete</a>
-       </li> 
-   </ul>
-      
+      </li> 
    {% endfor %}
+   </ul>
    
 {% endblock main %}

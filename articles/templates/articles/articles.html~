@@ -23,13 +23,13 @@
     <a  href="{% url 'search' %}" > search </a>
  
     <ul>
-   {% for article in articles %}
+    {% for article in articles %}
        <li>
         <a href="{% url 'article' article.id %}">{{ article.title }}</a>
         <a href="{% url 'edit' article.id %}">edit</a>
         <a href="{% url 'delete' article.id %}">delete</a>
        </li> 
-   {% endfor %}
+    {% endfor %}
    </ul>
    
 {% endblock main %}

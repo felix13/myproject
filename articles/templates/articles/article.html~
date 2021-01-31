@@ -14,7 +14,7 @@
  
    
 
- </p>{{article.content}} </p>
+ </p> {{article.content}} </p>
        
       
  

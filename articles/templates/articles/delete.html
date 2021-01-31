@@ -1,27 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-
 {% block head %}
-
-  <link href="{% static 'css/articles.css' %}" rel="stylesheet">
-  
-  <script src="{% static 'js/articles.js' %}"></script>
-  
+<link href="{% static 'css/articles.css' %}" rel="stylesheet">
+<script src="{% static 'js/articles.js' %}"></script> 
 {% endblock head %}
 
 {% block main %}
-         
-	  <a href="{% url 'articles' %}">
-       Home 
-      </a>
-      
-	  <form method="post">{% csrf_token %}
-        Are you sure you want to delete "{{ article.title }}" ?<br/>
-        <input type="submit" value="Delete" />
-      </form>
 
-
-	 
+<a href="{% url 'articles' %}"> Home </a>
+<form method="post">{% csrf_token %}
+   Are you sure you want to delete "{{ article.title }}" ?<br/>
+   <input type="submit" value="Delete" />
+</form>
+ 
 {% endblock main %}

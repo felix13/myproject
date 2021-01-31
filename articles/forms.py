@@ -4,21 +4,11 @@ from articles.models import Article
 
 
 class ArticleForm(forms.ModelForm):
-   
+
     class Meta:
         model = Article
         fields = ['title', 'content', 'status']
-        
-        
-        
-        
-        
-        
+
+
 class SearchForm(forms.Form):
-
     search_term = forms.CharField(required=False, max_length=50)
-        
-        
-        
-     
-
